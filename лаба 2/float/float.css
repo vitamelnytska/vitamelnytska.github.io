@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ul{
+    list-style-type: none;
+}
+.h{
+    font: 3em small-caps;}
+div {
+    display: table;
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    border:px solid orangered;
+ }
+ p{
+    padding: 3vh;
+ }
+ .l{
+     float: left;
+     width: 60%;
+}
+ .c{
+     float: none;
+     width: 15%;
+ }
+ .r{
+     float: right;
+     width: 25%;
+ }
+.center{
+    width: 100%;
+    height: 60vh;
+    background-color: whitesmoke;
+}
+.c_text{
+    padding-top: 20vh;
+    text-align: center;
+}
+menu{
+    padding-top: 30vh;
+}
+.empty{
+    clear: both;
+    width: 100%;
+    height: 100vh;
+    background-color: snow;
+}
+.sidebar{
+    width: 100%;
+    height: 80vh;
+    background-color: plum;
+    text-align: center;
+}
+.s3{
+    width: 100%;
+    height: 20vh;
+    background-color: magenta;
+}
+#header,
+#footer {
+    clear: both;
+    width: 100%;
+    height: 20vh;
+    background-color: lightseagreen;
+    }
+.logo1{
+    display: table-cell;
+    text-align: center;
+    float: right;
+    width: 30%;
+    margin: 40px;
+    background-color: white;
+}
+.logo2{
+    display: table-cell;
+    text-align: center;
+    float: left;
+    width: 30%;
+    margin: 40px;
+    background-color: white;
+}
+.text1{
+    float: left;
+    margin: 5px;
+    margin-top: 40px;
+}
+.text2{
+    float: right;
+    margin: 5px;
+    margin-top: 40px;
+}
+.text3{
+    margin: 5px;
+    margin-top: 40px;
+}
