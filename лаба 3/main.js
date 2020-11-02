@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', function(){
   let text = document.querySelector('#text').innerHTML;
   let arr = text.split(' ');
   
-  document.cookie = "Num =" + arr.length +"; path=/";
+  document.cookie = 'Num of words =' + arr.length + '\nCookies will be deleted after pressing "Ok" button!'+'; path=/';
   alert(document.cookie);
+
+document.cookie.split(';').map(item => {
+    if (item.includes('Num of words =')) {
+      if (window.confirm('Num of words =' + item.substring(item.indexOf('=') + 1, item.length)
+      + '\nCookies will be deleted after pressing "Ok" button!')){
+          //document.cookie.replace('Num=12','hiiiii');
+          deleteAllCookies();
+          alert("Cookies were deleted!");
+      }
+    }
 });
