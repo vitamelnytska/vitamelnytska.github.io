@@ -21,13 +21,11 @@ document.addEventListener('DOMContentLoaded', function(){
   document.cookie = 'Num of words =' + arr.length + '\nCookies will be deleted after pressing "Ok" button!'+'; path=/';
   alert(document.cookie);
 
-document.cookie.split(';').map(item => {
+document.cookie.split(';').
     if (item.includes('Num of words =')) {
-      if (window.confirm('Num of words =' + item.substring(item.indexOf('=') + 1, item.length)
-      + '\nCookies will be deleted after pressing "Ok" button!')){
+      if (window.confirm('Num of words =' + item.substring(item.indexOf('=') + 1, item.length)+'\nCookies will be deleted after pressing "Ok" button!')){
           //document.cookie.replace('Num=12','hiiiii');
           deleteAllCookies();
           alert("Cookies were deleted!");
       }
-    }
-});
+    };
