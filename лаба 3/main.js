@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded',() =>{
         location.reload();
         const data = prompt("Enter data", '');    
       }
-    }}
+    }
+  };
   
 
 
