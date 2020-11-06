@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded',() =>{
   document.cookie = 'Num of words =' + arr.length +'; path=/';
   alert(document.cookie)
 
+  
+ 
   window.onload = () => {
     const del = confirm(document.cookie + '\nCookies will be deleted after pressing "Ok" button!')
     if(del === true){
@@ -31,4 +33,5 @@ document.addEventListener('DOMContentLoaded',() =>{
       }
     }}
   
+
 
