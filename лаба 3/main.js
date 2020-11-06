@@ -1,7 +1,5 @@
-window.onload = function(){
-}
-
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded',() =>{
+//task 1
   var div2 = document.querySelector('#div2').innerHTML;
   var div1 = document.querySelector('#div1').innerHTML;
   document.querySelector('#div2').innerHTML = div1;
@@ -9,23 +7,28 @@ document.addEventListener('DOMContentLoaded', function(){
   onclick = function(){
     document.querySelector('#div2').innerHTML = div2;
     document.querySelector('#div1').innerHTML = div1;
-    }
+  }
+//task 2
   let a=3;
   let h=8;
   var res = a*h;
   document.querySelector('#text').innerHTML += 'Площа паралелограма: ' + res;
-//завдання №3
-  let text = document.querySelector('#text').innerHTML;
+});
+//task 3
+  let text = document.querySelector('#text').textContent;
   let arr = text.split(' ');
-  
-  document.cookie = 'Num of words =' + arr.length + '\nCookies will be deleted after pressing "Ok" button!'+'; path=/';
-  alert(document.cookie);
+  document.cookie = 'Num of words =' + arr.length +'; path=/';
+  alert(document.cookie)
 
-document.cookie.split(';').
-    if (item.includes('Num of words =')) {
-      if (window.confirm('Num of words =' + item.substring(item.indexOf('=') + 1, item.length)+'\nCookies will be deleted after pressing "Ok" button!')){
-          //document.cookie.replace('Num=12','hiiiii');
-          deleteAllCookies();
-          alert("Cookies were deleted!");
+  window.onload = () => {
+    const del = confirm(document.cookie + '\nCookies will be deleted after pressing "Ok" button!')
+    if(del === true){
+      document.cookie = "cookiename= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+      const ok_del = confirm('\nCookies are deleted')
+      if(ok_del === true){
+        location.reload();
+        const data = prompt("Enter data", '');    
       }
-    };
+    }}
+  
+
