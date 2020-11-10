@@ -1,149 +1,74 @@
-document.addEventListener('DOMContentLoaded',() =>{
-//task 1
-  var div2 = document.querySelector('#div2').innerHTML;
-  var div1 = document.querySelector('#div1').innerHTML;
-  document.querySelector('#div2').innerHTML = div1;
-  document.querySelector('#div1').innerHTML = div2;
-  onclick = function(){
-    if(document.querySelector('#div1').innerHTML === div1){
-      document.querySelector('#div2').innerHTML = div1;
-      document.querySelector('#div1').innerHTML = div2;
-    }
-    else{
-      document.querySelector('#div2').innerHTML = div2;
-      document.querySelector('#div1').innerHTML = div1;
-    }
-  }
-//task 2
-  let a=3;
-  let h=8;
-  var res = a*h;
-  document.querySelector('#text').innerHTML += 'Площа паралелограма: ' + res;
-});
-//task 3
-let text = document.querySelector('#text').textContent;
-let arr = text.split(' ');
-
-function task3(){
-  document.cookie = 'Num of words =' + encodeURIComponent(arr.length) +'; path=/';
-  alert(document.cookie)  
-  const del = confirm(document.cookie + '\nCookies will be deleted after pressing "Ok" button!')
-  if(del === true){
-    document.cookie = "Num of words= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-    const ok_del = confirm('\nCookies are deleted')
-    
-    if(ok_del === true){
-      window.onload = () =>{     
-        let arr2 = prompt("Enter data", '');
-      //  alert('you enter:'+ arr2)
-      }  
-    }
-  }
-}
-//task3();
-let sidebar = document.querySelector('#sidebar')
-function loadColor() {
-  sidebar.style.backgroundColor = localStorage.getItem('backgroundColor')
-
-};
-function task4(){
- 
-  
-  const buttonR = document.createElement("button");
-  const buttonG = document.createElement("button");
-  const buttonY = document.createElement("button");
-
-  const buttonArr = [buttonR, buttonY, buttonG]
-  const colorArr = ['red', 'green', 'yellow']
-  
-  for(let i=0; i< buttonArr.length; i++){
-    buttonArr[i].innerHTML = "change color to " + colorArr[i];
-    sidebar.appendChild(buttonArr[i]);
-    buttonArr[i].onclick = () => {
-      localStorage.setItem('backgroundColor', colorArr[i]);
-      loadColor();
-        
-    }
-    window.addEventListener('load', event => {
-      loadColor();
-  });
-  }
-}
-task4()
-//task 5
-const parent = document.querySelector('#text');
-parent.onmouseout = handler;
-function handler(event) {
-  if (event.type == 'mouseout') {
-    event.target.style.background = 'pink'
-  }
-}
-//task 6
-let header = document.querySelector('#header');
-let center = document.querySelector('#center');
-let footer = document.querySelector('#footer');
-let s3 = document.querySelector('#s3');
-
-function tidy(html) {
-  var d = document.createElement('div');
-  d.innerHTML = html;
-  return d.innerHTML;
-}
-
-function buttonSubmit(block) {
-  let content = localStorage.getItem(block.id);
-  if (content){
-    let backup = block.innerHTML;
-    block.innerHTML += content;
-      let button = document.createElement('button');
-      button.textContent = 'cancel';
-      button.setAttribute("type", "submit");
-      button.style.width = '60px';
-      button.style.height = "20px";
-      button.style.maxHeight = "100%";
-      button.style.maxWidth = "100%";
-      button.style.bottom = "20px";
-      button.style.resize = "both";
-      block.style.position = "relative";
-      button.style.position = "absolute";
-      button.id = 'btnSubmit';
-      block.appendChild(button);
-      button.onclick = () => {
-        block.innerHTML = backup;
-        localStorage.removeItem(block.id);
-        addInputEditor(block);
-      };
-  return button;
-  }
-  
-};
-
-function addInputEditor(block) {
-  let textArea = document.createElement('input');
-  textArea.style.width = '60px';
-  textArea.style.height = "20px";
-  textArea.style.maxHeight = "100%";
-  textArea.style.maxWidth = "100%";
-  textArea.style.bottom = "20px";
-  textArea.style.resize = "both";
-  block.style.position = "relative";
-  textArea.style.position = "absolute";
-  textArea.oninput = () => {
- //   console.log(localStorage);
-      localStorage.setItem(`${block.id}`, textArea.value);
-  };
-  block.appendChild(textArea);
-  return textArea;
-};
-let blocksArr = [sidebar, header, center, footer, s3];
-
-let task6 = () => {
-  blocksArr.forEach(block => {
-      if (localStorage.getItem(block.id)) {
-        buttonSubmit(block);
-      } else {
-        addInputEditor(block);
-      }
-  });
-};
-task6();
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">  
+      <title>Grid</title>
+      <link rel="stylesheet" href="style.css">
+      
+      
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="l">
+                <div id="header">
+                    <div class="text1">
+                        <div>
+                            Every artist was first an amateur
+                        </div>
+                    </div>  
+                    <div class="logo1">
+                        <div id="div1">
+                            <a class="h">
+                                Hello
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="center" id="center">
+                    <p class="c_text" id="text">Мисте́цтво — одна з форм суспільної свідомості; вид людської діяльності, що відбиває дійсність у конкретно-чуттєвих образах, відповідно до певних естетичних ідеалів. У широкому сенсі мистецтвом називають досконале вміння в якійсь справі, галузі; майстерність. Розвиток мистецтва як елемента духовної культури обумовлюється як загальними закономірностями буття людини й людства, так і естетично-художніми закономірностями, естетично-художніми поглядами, ідеалами й традиціями.</p>
+                </div>
+                <div id="footer">
+                    <div class="logo2">
+                        <div id="div2">
+                            <a class="h">
+                                Chao
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text2">
+                        A picture is a poem without words
+                    </div>
+                </div>
+            </div>
+            <div class="c">
+                <div class="empty">                                 
+                </div>
+            </div>            
+            <div class="r">
+                <div class="sidebar" id="sidebar">
+                        <menu>
+                           <a class="h">
+                               Меню
+                            </a>
+                        </menu>
+                        <ul>
+                            <li><a href="#">Головна</a></li>
+                            <li><a href="">Сторінка 1</a></li>
+                            <li><a href="">Сторінка 2</a></li>
+                            <li><a href="">Сторінка 3</a></li>
+                            <li><a href="">Сторінка 4</a></li>
+                        </ul>
+                </div>
+                <div class="s3" id="s3">
+                    <div class="text3">
+                        Every child is an artist. 
+                        The problem is how to remain an artist once we 
+                        grow up.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
